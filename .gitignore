@@ -7,5 +7,9 @@ __pycache__/
 
 # Common local outputs
 out_dataset/
+out_dataset_*/
 infer_out/
 runs/
+
+# Common local archives/artifacts
+*.tar.gz
