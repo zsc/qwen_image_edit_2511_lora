@@ -92,6 +92,18 @@ def prepare_dataset(
     with open(metadata_path, "w", encoding="utf-8") as f:
         for entry in metadata:
             f.write(json.dumps(entry, ensure_ascii=False) + "\n")
+
+    # Write metadata.diffsynth.jsonl for DiffSynth training / eval tools.
+    diffsynth_metadata_path = out_dir / "metadata.diffsynth.jsonl"
+    with open(diffsynth_metadata_path, "w", encoding="utf-8") as f:
+        for entry in metadata:
+            diffsynth_entry = {
+                "id": entry["id"],
+                "image": entry["image"],
+                "edit_image": entry["control_image"],
+                "prompt": entry["prompt"],
+            }
+            f.write(json.dumps(diffsynth_entry, ensure_ascii=False) + "\n")
     
     # Write manifest.json
     manifest = {

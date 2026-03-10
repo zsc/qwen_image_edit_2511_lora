@@ -1,3 +1,7 @@
+# Local dev requirements only.
+# On SOFY, do not install this file; use tools/setup_sofy_qwen_env.sh so the
+# container-provided /opt/ac2 torch stack stays untouched.
+
 # Core dependencies
 torch>=2.0.0
 torchvision>=0.15.0
@@ -13,6 +17,7 @@ diffusers>=0.25.0
 typer>=0.9.0
 pillow>=10.0.0
 tqdm>=4.66.0
+tensorboard>=2.16.0
 
 # Optional but recommended
 # numpy>=1.24.0
